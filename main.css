@@ -104,11 +104,16 @@ body.dark-mode #nav-links a:hover {
 }
 
 @media screen and (max-width: 900px) {
+  body.dark-mode main#content, body.dark-mode .content {
+    border-left: none;
+    border-right: none;
+  }
+
   main#content, .content {
     max-width: 98vw;
     padding: 1em 1vw;
-    border-left: 4px solid red;
-    border-right: 4px solid black;
+    border-left: none;
+    border-right: none;
     margin: auto auto auto auto;
   }
   nav, .swiss-footer {
@@ -121,6 +126,8 @@ body.dark-mode #nav-links a:hover {
 @media screen and (max-width: 600px) {
   main#content, .content {
     margin: auto auto auto auto;
+    border-left: none;
+    border-right: none;
   }
   nav, .swiss-footer {
     flex-direction: column;
