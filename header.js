@@ -7,7 +7,7 @@ let open = true;
 function setNav(openState) {
     if (window.innerWidth > 800) {
         navLinks.classList.remove('open');
-        navLinks.style.maxHeight = 'none';
+        navLinks.style.maxHeight = '1.5em';
         navLinks.style.opacity = '1';
     } else {
         navLinks.style = "";
@@ -22,7 +22,7 @@ function updateMenuDisplay() {
     if (window.innerWidth > 800) {
         hamburger.style.display = 'none';
         navLinks.classList.remove('open');
-        navLinks.style.maxHeight = 'none';
+        navLinks.style.maxHeight = '1.5em';
         navLinks.style.opacity = '1';
     } else {
         hamburger.style.display = 'flex';
