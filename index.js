@@ -29,23 +29,25 @@ function loadTemplate() {
             document.body.appendChild(script);
         });
     //load footer
-    fetch('footer.html').
-        then(r => r.text()).
-        then(html => document.getElementById('footer').innerHTML = html);
+    // fetch('footer.html').
+    //     then(r => r.text()).
+    //     then(html => document.getElementById('footer').innerHTML = html);
 }
 
 function loadContent() {
-    let path = '';
-    let page = '404.html';
+    // let path = '';
+    // let page = '404.html';
 
-    if(window.location.pathname === '' || window.location.pathname === '/') {
-        path = window.location.hash || '';
-        page = routes[path] || '404.html';
-    } else {
-        window.location.href = `${window.location.origin}`;
-    }
+    // if(window.location.pathname === '' || window.location.pathname === '/') {
+    //     path = window.location.hash || '';
+    //     page = routes[path] || '404.html';
+    // } else {
+    //     window.location.href = `${window.location.origin}`;
+    // }
 
-    console.log(`path : ${path} - page : ${page}`);
+    // console.log(`path : ${path} - page : ${page}`);
+    const path = window.location.hash || '';
+    const page = routes[path] || '404.html';
     
     fetch(page)
         .then(r => r.text())
