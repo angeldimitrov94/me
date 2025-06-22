@@ -1,6 +1,8 @@
 // Handles hamburger menu toggle and responsive nav
 const hamburger = document.getElementById('hamburger');
 const navLinks = document.getElementById('nav-links');
+const darkOrLight = document.getElementById('darkOrLight');
+let light = true;
 let open = true;
 function setNav(openState) {
     if (window.innerWidth > 800) {
@@ -8,6 +10,7 @@ function setNav(openState) {
         navLinks.style.maxHeight = 'none';
         navLinks.style.opacity = '1';
     } else {
+        navLinks.style = "";
         if (openState) {
             navLinks.classList.add('open');
         } else {
@@ -26,10 +29,30 @@ function updateMenuDisplay() {
         setNav(open);
     }
 }
+function setDarkOrLight() {
+    darkOrLight.innerHTML = `<i data-feather="${light ? 'sun' : 'moon'}"></i>`;
+    document.body.classList.toggle('dark-mode', !light);
+    feather.replace();
+}
+function initializeLightOrDark() {
+    const storageLight = localStorage.getItem('light');
+    if (storageLight !== null) {
+        light = storageLight === 'true';
+    }
+    setDarkOrLight();
+}
+// Run initialization immediately when script loads
+initializeLightOrDark();
+window.addEventListener('DOMContentLoaded',initializeLightOrDark);
+window.addEventListener('resize', updateMenuDisplay);
+updateMenuDisplay();
 hamburger.onclick = () => {
     open = !open;
     console.log(`hamburger on click ${open}`)
     setNav(open);
 };
-window.addEventListener('resize', updateMenuDisplay);
-updateMenuDisplay();
+darkOrLight.onclick = () => {
+    light = !light;
+    localStorage.setItem('light', light ? 'true' : 'false');
+    setDarkOrLight();
+}

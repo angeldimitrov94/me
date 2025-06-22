@@ -27,6 +27,7 @@ function loadTemplate() {
             const script = document.createElement('script');
             script.src = 'header.js';
             document.body.appendChild(script);
+            feather.replace();
         });
     //load footer
     // fetch('footer.html').

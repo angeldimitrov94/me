@@ -89,7 +89,7 @@ nav {
     }
 
     #nav-links.open {
-        max-height: 400px;
+        max-height: 600px;
         opacity: 1;
         transition: max-height 0.3s, opacity 0.3s;
     }
@@ -101,4 +101,10 @@ nav {
         padding: 1em 2vw;
         border-bottom: 1px solid #eee;
     }
+}
+
+#darkOrLight {
+    cursor: pointer;
+    min-height: 24px;
+    padding: 1em;
 }
