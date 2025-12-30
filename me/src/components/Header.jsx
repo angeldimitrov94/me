@@ -1,0 +1,23 @@
+import React from 'react';
+
+export default function Header(){
+  return (
+    <nav>
+      <button id="hamburger" aria-label="Open navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <div id="nav-links">
+        <a href="#/">Home</a>
+        <a href="#/about">About</a>
+        <a href="#/projects">Projects</a>
+        <a href="#/blog">Blog</a>
+        <a href="#/contact">Contact</a>
+        <div id="darkOrLight">
+          <i data-feather="sun"></i>
+        </div>
+      </div>
+    </nav>
+  );
+}
