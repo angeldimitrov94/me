@@ -8,22 +8,21 @@ import Footer from './components/Footer'
 import Home from './components/Home'
 import About from './components/About'
 import Projects from './components/Projects'
-import Blog from './components/Blog'
 import Contact from './components/Contact'
+import NotFound from './components/NotFound'
 
 function App(){
   return (
     <Router>
-      <div className="page bg">
+      <div className="page relative z-10">
         <Header />
         <main>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/projects" element={<Projects />} />
-            <Route path="/blog" element={<Blog />} />
             <Route path="/contact" element={<Contact />} />
-            <Route path="*" element={<div className="content"><h1>404</h1><p>Page not found.</p></div>} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </main>
         <Footer />

@@ -2,57 +2,59 @@ import React from 'react';
 
 export default function Projects(){
   return (
-    <div className="content">
-      <h1>Projects</h1>
-      <div style={{display: 'flex', flexDirection: 'column'}}>
-        <div className="two-column-grid-layout">
+    <div className="mx-auto my-10 px-10 py-10 max-w-4xl bg-black/60 backdrop-blur-md rounded-3xl shadow-2xl relative text-white">
+      <h1 className="text-5xl font-semibold text-white my-3">Projects</h1>
+      <div className="flex flex-col">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 p-4">
           <div>
-            <h2>Nexus EOL</h2>
+            <h2 className="text-4xl text-white my-3">Itinerary Fairy</h2>
+            <a href="https://itineraryfairy.com/" className="text-white no-underline font-semibold hover:underline">https://itineraryfairy.com/</a>
           </div>
           <div></div>
           <div></div>
           <div>
-            <p><i>nexus - noun - nex·us ˈnek-səs : CONNECTION, LINK</i></p>
-            <p><i>EOL = end-of-line, describes the final manufacturing test performed on an assembled manufactured product at the end of the assembly line</i></p>
+            <h4 className="text-xl font-semibold text-white mb-2">What issue does it solve?</h4>
+            <p className="text-white mb-4">
+              Planning multi‑stop trips is time consuming: finding relevant places, arranging a logical route, and sharing a usable plan are all friction points. The app streamlines discovery with AI assistance, surfaces sensible routing using mapping integrations, and makes it easy to publish shareable itineraries that others can view and follow.
+            </p>
           </div>
           <div>
-            <h4>What does it do?</h4>
-            <p>An aggregator and central connection hub for manufacturing test data (hence 'Nexus'). When a product is tested by a manufacturer, said test status and data is sent to the platform. Pushes of data to the platform can trigger subsequent logic, such as back-office operations.</p>
+            <p className="text-white mb-4"><i>A travel itinerary builder that helps users discover, compose, and publish trip plans.</i></p>
           </div>
           <div></div>
-          <div></div>
           <div>
-            <h4>What issue does it solve?</h4>
-            <p>Manufacturing processes sometimes suffer from being woefully disconnected. The amount of data available can offer tremendous value, IF it is captured. The platform is specifically tailored to make it easy for manufacturing testing teams to send their data to a centralized location where various stake-holders can access it from the web, as opposed to various random bits of data being stored away on scattered machines across multiple networks and with varying formats.</p>
-          </div>
-          <div>
-            <h4>Software Implementation</h4>
-            <p>The project is built in Node.Js with a monolithic backend built with Express.Js and a client-rendered Angular frontend that uses mostly Angular Material UI components. MongoDB is the data store to provide flexibility for data models. It employs a multi-tenant architecture for logically separating multiple accounts'/users' data from each other within the same common data store, which brings value at reasonable compute cost.</p>
+            <h4 className="text-xl font-semibold text-white mb-2">What does it do?</h4>
+            <p className="text-white mb-4">
+              Itinerary Fairy helps travelers create multi‑stop itineraries by combining an AI‑assisted search with mapping tools. Users can discover places, generate suggested sequences, then organize and reorder stops using an intuitive editor. Each itinerary can include directions and dynamic links so others can follow the route or open directions in their preferred mapping app.
+            </p>
           </div>
           <div></div>
           <div></div>
           <div>
-            <h4>Questions?</h4>
-            <p>Feel free to DM on <a href="https://www.linkedin.com/in/angel-dimitrov/" target="_blank" rel="noreferrer">LinkedIn</a> if you're interested and would like to learn/discuss more.</p>
+            <h4 className="text-xl font-semibold text-white mb-2">Software implementation</h4>
+            <p className="text-white mb-4">
+              The app integrates mapping plugins and dynamic direction URLs to present routes and location context. An AI search layer helps generate candidate stops and suggests orderings; users can then edit, reorder (drag‑and‑drop), and save itineraries. Publishing produces a lightweight, shareable view that viewers can open to inspect the itinerary and follow directions in their chosen mapping tool. The application is implemented as an Angular frontend backed by a Node.js API and a document database, and is packaged as containerized Docker services for quick, reproducible deployment.
+            </p>
+          </div>
+          <div></div>
+          <div></div>
+          <div>
+            <h4 className="text-xl font-semibold text-white mb-2">Questions?</h4>
+            <p className="text-white mb-4">
+              Interested parties can reach out on <a href="https://www.linkedin.com/in/angel-dimitrov/" target="_blank" rel="noreferrer" className="text-white no-underline font-semibold hover:underline">LinkedIn</a> to learn more or see demos.
+            </p>
           </div>
         </div>
 
-        <div className="two-column-grid-layout">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 p-4">
           <div>
-            <h2>This site</h2>
+            <h2 className="text-4xl text-white my-3">This Site</h2>
           </div>
           <div></div>
           <div></div>
           <div>
-            <h4>A design exercise</h4>
-            <p>I've always had an interest in developing a better design sense to expand my full-stack skillset.</p>
-            <p>I also enjoy elegant designs (not just web applications) - and wanted an exercise in applying my favorite minimalist, timeless design style - <a href="https://admindagency.com/blog/exploring-the-depths-of-swiss-design/">Swiss Design</a>.</p>
-          </div>
-          <div>
-            <h4>Tech stack minimalism</h4>
-            <p>Along with the minimalist design style, I wanted an exercise in minimalist web design as well.</p>
-            <p>No  : npm, site templates, React, Angular, frameworks...</p>
-            <p>Yes : diy, vanilla Javascript/HTML, simplicity</p>
+            <h4 className="text-xl font-semibold text-white mb-2">Modern web tech</h4>
+            <p className="text-white mb-4">Built with React for component architecture, React Router for navigation, and Tailwind CSS for utility-first styling. I learned about design systems, responsive layouts, and how powerful utility frameworks can be for rapid, maintainable development. Deployed as a static SPA with zero backend dependencies.</p>
           </div>
         </div>
 
