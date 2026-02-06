@@ -1,13 +1,15 @@
 import React from 'react';
 
 export default function MyWork() {
+  const [previewImage, setPreviewImage] = React.useState(null);
+
   const projects = [
     {
       title: "Itinerary Fairy",
       link: "https://itineraryfairy.com/",
       tagline: "AI-powered travel itinerary builder with mapping integrations.",
       image: "https://itineraryfairy.com/if-256.png",
-      imageSize: "md:w-48",
+      imageSize: "w-24",
       tags: [{ text: "AI-assisted", color: "bg-purple-600" }, { text: "travel", color: "bg-purple-600" }, { text: "geospatial data", color: "bg-purple-600" }],
       sections: [
         {
@@ -126,7 +128,8 @@ export default function MyWork() {
                     <img
                       src={project.image}
                       alt={project.title}
-                      className="w-full rounded-lg shadow-xl border border-white/20 hover:scale-105 transition-transform duration-300"
+                      className="w-full rounded-lg shadow-xl border border-white/20 hover:scale-105 transition-transform duration-300 cursor-pointer"
+                      onClick={() => setPreviewImage({ src: project.image, alt: project.title })}
                     />
                   </div>
                 )}
@@ -147,6 +150,32 @@ export default function MyWork() {
           </div>
         ))}
       </div>
+
+      {/* Image Preview Modal */}
+      {previewImage && (
+        <div 
+          className="fixed inset-0 bg-black/90 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+          onClick={() => setPreviewImage(null)}
+        >
+          <div className="relative max-w-7xl max-h-[90vh] w-full h-full flex items-center justify-center">
+            <button
+              onClick={() => setPreviewImage(null)}
+              className="absolute top-4 right-4 bg-white/10 hover:bg-white/20 text-white rounded-full p-3 transition-colors z-10"
+              aria-label="Close preview"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+            <img
+              src={previewImage.src}
+              alt={previewImage.alt}
+              className="max-w-full max-h-full object-contain rounded-lg shadow-2xl"
+              onClick={(e) => e.stopPropagation()}
+            />
+          </div>
+        </div>
+      )}
     </div>
   );
 }
