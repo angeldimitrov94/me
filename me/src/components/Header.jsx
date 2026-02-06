@@ -11,7 +11,7 @@ export default function Header(){
       <div id="nav-links" className="flex items-center gap-4 flex-1 transition-all duration-250">
         <a href="#/" className="text-white no-underline px-3 py-2 rounded-lg transition-all duration-180 hover:bg-white/20 hover:text-white font-medium">Home</a>
         <a href="#/about" className="text-white no-underline px-3 py-2 rounded-lg transition-all duration-180 hover:bg-white/20 hover:text-white font-medium">About</a>
-        <a href="#/projects" className="text-white no-underline px-3 py-2 rounded-lg transition-all duration-180 hover:bg-white/20 hover:text-white font-medium">Projects</a>
+        <a href="#/my-work" className="text-white no-underline px-3 py-2 rounded-lg transition-all duration-180 hover:bg-white/20 hover:text-white font-medium">My Work</a>
         <a href="#/contact" className="text-white no-underline px-3 py-2 rounded-lg transition-all duration-180 hover:bg-white/20 hover:text-white font-medium">Contact</a>
       </div>
     </nav>
